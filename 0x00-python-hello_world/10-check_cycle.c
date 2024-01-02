@@ -9,7 +9,6 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 
-	ptr = list;
 	while (ptr != NULL && cnc != NULL && cnc->next != NULL)
 	{
 		ptr = ptr->next;
@@ -17,11 +16,6 @@ int check_cycle(listint_t *list)
 
 		if (ptr == cnc)
 		{
-			while (list != cnc)
-			{
-				list = list->next;
-				cnc = cnc->next;
-			}
 			return (1);
 		}
 	}
