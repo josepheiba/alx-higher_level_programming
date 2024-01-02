@@ -25,13 +25,13 @@ listint_t *insert_node(listint_t **head, int number)
 			{
 				bold->next = bold->next;
 				bold->next = new;
-				return (new);
+				return (node);
 			}
 			bold = bold->next;
 		}
 		bold->next = NULL;
 		bold->next = new;
-		return (new);
+		return (node);
 	}
 	return (NULL);
 }
