@@ -25,12 +25,12 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	else
 	{
-		while(bold != NULL)
+		while(bold->next != NULL)
 		{
 			if(bold->next->n > number)
 			{
 				node->next = bold->next;
-				bold = node;
+				bold->next = node;
 				return (node);
 			}
 			bold = bold->next;
