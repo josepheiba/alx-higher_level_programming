@@ -16,7 +16,7 @@ int is_palindrome(listint_t **head)
         if (l == 1)
 		return (1);
 
-        int_array = malloc(sizeof(int) * l);
+        int_array = malloc(sizeof(int) * (l + 1));
         if (int_array == NULL)
                 return (0);
 
