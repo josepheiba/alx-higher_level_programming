@@ -1,64 +1,39 @@
-#include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "lists.h"
+/**
+ * is_palindrome - checks for list is palindrome
+ * @head: head of linked list
+ * Return:  boolean
+ */
 int is_palindrome(listint_t **head)
 {
-        int l;
-        int *int_array;
-        l = 0;
+	int len = 0, i = 0;
+	listint_t *tmp;
+	int *Ns;
 
-        if (*head == NULL)
-                return (1);
-
-        find_tail(*head, &l);
-
-        if (l == 1)
+	tmp = *head;
+	if ((*head) == NULL)
 		return (1);
-
-        int_array = malloc(sizeof(int) * l);
-
-        fill_array(*head, &int_array);
-        if (is_pad(int_array, (int_array + l)))
-                return (1);
-        return (0);
-}
-
-listint_t find_tail(listint_t *head, int *l)
-{
-        listint_t *new;
-        new = head;
-        while (new->next != NULL)
-        {
-                *l = *l + 1;
-                new = new->next;
-        }
-        return (*new);
-}
-
-void fill_array(listint_t *head, int **int_array)
-{
-        listint_t *new;
-        int i;
-
-        new = head;
-        i = 0;
-        while (new != NULL)
-        {
-                (*int_array)[i] = new->n;
-                new = new->next;
-                i++;
-        }
-}
-
-int is_pad(int *int_array, int *int_array_end)
-{
-       if (*int_array != *int_array_end)
-       {
-               return (0);
-       }
-       else if (int_array >= int_array_end)
-               return (1);
-       else
-               return (is_pad(int_array + 1, int_array_end - 1));
+	while (tmp->next != NULL)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	if (len == 1)
+		return (1);
+	Ns = malloc(sizeof(int) * len);
+	tmp = *head;
+	while (tmp != NULL)
+	{
+		Ns[i] = tmp->n;
+		tmp = tmp->next;
+		i++;
+	}
+	for (i = 0; i <= len / 2; i++)
+	{
+		if (Ns[i] != Ns[len - i])
+			return (0);
+	}
+	return (1);
 }
