@@ -17,8 +17,6 @@ int is_palindrome(listint_t **head)
 		return (1);
 
         int_array = malloc(sizeof(int) * l);
-        if (int_array == NULL)
-                return (0);
 
         fill_array(*head, &int_array);
         if (is_pad(int_array, (int_array + l)))
