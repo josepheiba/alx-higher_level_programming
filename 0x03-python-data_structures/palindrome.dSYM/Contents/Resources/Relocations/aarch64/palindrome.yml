@@ -1,0 +1,16 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     palindrome
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000039FC, symSize: 0xFC }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000039FC, symSize: 0xFC }
+  - { offsetInCU: 0x26, offset: 0xCC, size: 0x8, addend: 0x0, symName: _print_listint, symObjAddr: 0x0, symBinAddr: 0x100003AF8, symSize: 0x84 }
+  - { offsetInCU: 0x41, offset: 0xE7, size: 0x8, addend: 0x0, symName: _print_listint, symObjAddr: 0x0, symBinAddr: 0x100003AF8, symSize: 0x84 }
+  - { offsetInCU: 0x85, offset: 0x12B, size: 0x8, addend: 0x0, symName: _add_nodeint_end, symObjAddr: 0x84, symBinAddr: 0x100003B7C, symSize: 0xDC }
+  - { offsetInCU: 0xD7, offset: 0x17D, size: 0x8, addend: 0x0, symName: _free_listint, symObjAddr: 0x160, symBinAddr: 0x100003C58, symSize: 0x54 }
+  - { offsetInCU: 0x26, offset: 0x24A, size: 0x8, addend: 0x0, symName: _is_palindrome, symObjAddr: 0x0, symBinAddr: 0x100003CAC, symSize: 0xDC }
+  - { offsetInCU: 0x41, offset: 0x265, size: 0x8, addend: 0x0, symName: _is_palindrome, symObjAddr: 0x0, symBinAddr: 0x100003CAC, symSize: 0xDC }
+  - { offsetInCU: 0x85, offset: 0x2A9, size: 0x8, addend: 0x0, symName: _find_tail, symObjAddr: 0xDC, symBinAddr: 0x100003D88, symSize: 0x70 }
+  - { offsetInCU: 0xC9, offset: 0x2ED, size: 0x8, addend: 0x0, symName: _fill_array, symObjAddr: 0x14C, symBinAddr: 0x100003DF8, symSize: 0x6C }
+  - { offsetInCU: 0x117, offset: 0x33B, size: 0x8, addend: 0x0, symName: _is_pad, symObjAddr: 0x1B8, symBinAddr: 0x100003E64, symSize: 0xCC }
+...

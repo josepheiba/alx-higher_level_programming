@@ -1,5 +1,6 @@
 #ifndef LISTS_H
 #define LISTS_H
+#include <stdio.h>
 
 /**
  * struct listint_s - singly linked list
@@ -20,6 +21,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
-listint_t find_tail(listint_t **head)
+listint_t find_tail(listint_t *head, int *l);
+void fill_array(listint_t *head, int **int_array);
+int is_pad(int *int_array, int *int_array_end);
 
 #endif /* LISTS_H */
