@@ -1,26 +1,49 @@
-#include "Python.h"
-/**
-  * print_python_list_info - Prints information about python objects
-  * @p: PyObject pointer to print info about
-  * Compile with:
-  * gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 103-python.c
-  */
-void print_python_list_info(PyObject *p)
+#include <Python.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void print_python_list(PyObject *p)
 {
-	Py_ssize_t i, py_list_size;
+	Py_ssize_t size, i;
 	PyObject *item;
-	const char *item_type;
-	PyListObject *list_object_cast;
 
-	list_object_cast = (PyListObject *)p;
-	py_list_size = PyList_Size(p);
+	size = PyList_Size(p);
+	printf("[*] Python list info\n");
+	printf("[*] Size of the Python List = %ld\n", size);
+	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
-	printf("[*] Size of the Python List = %d\n", (int) py_list_size);
-	printf("[*] Allocated = %d\n", (int)list_object_cast->allocated);
-	for (i = 0; i < py_list_size; i++)
+	for (i = 0; i < size; i++)
 	{
 		item = PyList_GetItem(p, i);
-		item_type = (PyObject*(item))->ob_size->tp_name;
-		printf("Element %d: %s\n", (int) i, item_type);
+		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
 	}
+}
+
+void print_python_bytes(PyObject *p)
+{
+	Py_ssize_t size, i;
+	char *bytes_str;
+
+	printf("[.] bytes object info\n");
+	if (!PyBytes_Check(p))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
+
+	size = PyBytes_Size(p);
+	bytes_str = PyBytes_AsString(p);
+
+	printf("  size: %ld\n", size);
+	printf("  trying string: %s\n", bytes_str);
+
+	printf("  first %ld bytes: ", (size < 10) ? size + 1 : 10);
+	for (i = 0; i < size && i < 10; i++)
+	{
+		printf("%02hhx", bytes_str[i]);
+		if (i == 9)
+			break;
+		printf(" ");
+	}
+	printf("\n");
 }
