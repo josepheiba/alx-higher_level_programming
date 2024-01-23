@@ -16,3 +16,7 @@ class Square:
     def area(self):
         """link"""
         return self.__size ** 2
+
+    def size(self):
+        """link"""
+        return self.__size
