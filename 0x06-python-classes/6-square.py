@@ -38,14 +38,3 @@ class Square:
                 print()
             for _ in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
-
-if __name__ == "__main__":
-    my_square = Square(4, (2, 2))
-    print("Area: {}".format(my_square.area()))
-    my_square.my_print()
-
-    print()
-
-    my_empty_square = Square()
-    print("Area: {}".format(my_empty_square.area()))
-    my_empty_square.my_print()
