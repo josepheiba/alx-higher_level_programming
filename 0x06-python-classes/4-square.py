@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""link"""
+"""Define a class Square."""
 
 
 class Square:
-    """link"""
+    """Represent a square."""
     def __init__(self, size=0):
         self.size = size
 
