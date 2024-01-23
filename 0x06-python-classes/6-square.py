@@ -5,8 +5,8 @@
 class Square:
     """link"""
     def __init__(self, size=0, position=(0, 0)):
-        self.size = size  # Using the setter to set the size attribute
-        self.position = position  # Using the setter to set the position attribute
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
