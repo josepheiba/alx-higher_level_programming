@@ -6,4 +6,4 @@ class Square:
     """link"""
     def __init__(self, size):
         """link"""
-        self.size = size
+        self.__size = size
