@@ -41,8 +41,8 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        drawing = ''
-        if self.__width == 0 or self.__height == 0:
+        drawing = ""
+        if self.perimeter == 0:
             return drawing
         for _ in range(self.__height):
             drawing = drawing + '#' * self.__width + '\n'
