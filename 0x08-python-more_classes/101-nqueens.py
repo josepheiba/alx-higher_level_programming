@@ -7,8 +7,8 @@ import sys
 def init_board(n):
     """docs"""
     board = []
-    [board.append([]) for _ in range(n)]
-    [row.append(' ') for _ in range(n) for row in board]
+    [board.append([]) for i in range(n)]
+    [row.append(' ') for i in range(n) for row in board]
     return (board)
 
 
