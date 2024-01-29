@@ -44,4 +44,4 @@ class Rectangle:
         drawing = ""
         if self.perimeter == 0:
             return drawing
-        return '\n'.join('#' * self.width for _ in range(self.height))
+        return '\n'.join('#' * self.__width for _ in range(self.__height))
