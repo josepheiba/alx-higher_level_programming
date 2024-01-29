@@ -5,22 +5,19 @@ import sys
 
 
 def init_board(n):
-    """docs"""
     board = []
-    [board.append([]) for i in range(n)]
-    [row.append(' ') for i in range(n) for row in board]
+    [board.append([]) for _ in range(n)]
+    [row.append(' ') for _ in range(n) for row in board]
     return (board)
 
 
 def board_deepcopy(board):
-    """docs"""
     if isinstance(board, list):
         return list(map(board_deepcopy, board))
     return (board)
 
 
 def get_solution(board):
-    """docs"""
     solution = []
     for r in range(len(board)):
         for c in range(len(board)):
