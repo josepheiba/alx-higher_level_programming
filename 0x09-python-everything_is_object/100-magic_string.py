@@ -6,6 +6,6 @@ def magic_string():
 
 class School:
     number_of_instances = 0
-    def __init__(self):
 
+    def __init__(self):
         School.number_of_instances += 1
