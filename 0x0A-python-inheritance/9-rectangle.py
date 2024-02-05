@@ -19,11 +19,6 @@ class Rectangle(BaseGeometry):
         """docs"""
         return self.__width * self.__height
 
-    def print(self):
-        """docs"""
-        for _ in range(self.__height):
-            print('#' * self.__width)
-
     def __str__(self):
         """docs"""
         return f"[Rectangle] {self.__width}/{self.__height}"
