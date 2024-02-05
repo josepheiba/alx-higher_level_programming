@@ -18,10 +18,20 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """docs"""
+    """Represents a rectangle.
+    Private instance attributes:
+        - width
+        - height
+    Inherits from BaseGeometry.
+    """
 
     def __init__(self, width, height):
-        """docs"""
+        """Initializes an instance.
+        Args:
+            - width: width of the rectangle
+            - heigth: height of the rectangle
+        """
+
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
