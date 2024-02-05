@@ -18,6 +18,6 @@ class Square(Rectangle):
         """docs"""
         return super().area()
 
-    def __str__(sef):
+    def __str__(self):
         """docs"""
-        return super().__str__()
+        return f"[Square] {self.__size}/{self.__size}"
