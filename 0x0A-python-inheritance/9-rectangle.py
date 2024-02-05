@@ -20,6 +20,7 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def print(self):
+        """docs"""
         for _ in range(self.__height):
             print('#' * self.__width)
 
