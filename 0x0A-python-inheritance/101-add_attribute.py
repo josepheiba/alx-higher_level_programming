@@ -3,6 +3,8 @@
 
 
 def add_attribute(obj, attribute, value):
+    """docs"""
+
     if isinstance(obj, object):
         setattr(obj, attribute, value)
     else:
