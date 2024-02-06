@@ -4,6 +4,8 @@
 
 def read_file(filename=""):
     """docs"""
-    with open(filename, 'r') as fileObject:
-        lines = fileObject.readline()
-    print(lines)
+    with open(filename, mode='r', encoding='utf-8') as fileObject:
+        lines = fileObject.readlines()
+
+    for line in lines:
+        print(line, end="")
