@@ -12,4 +12,5 @@ try:
 except FileNotFoundError:
     myList = []
 
-save_to_json_file(myList.extend(sys.argv[1:]), fileName)
+myList.extend(sys.argv[1:])
+save_to_json_file(myList, fileName)
