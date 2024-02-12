@@ -6,13 +6,13 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """docs"""
+    """ Class Square """
     def __init__(self, size, x=0, y=0, id=None):
-        """docs"""
+        """ Initialisation """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """docs"""
+        """ Return string """
         return "[Square] ({}) {}/{} - {}".format(
         self.id, self.x, self.y, self.width)
 
@@ -26,7 +26,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """docs"""
+        """ Update with args """
         if args is not None and len(args) != 0:
             if len(args) >= 1:
                 if type(args[0]) != int and args[0] is not None:
@@ -52,6 +52,6 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
-        """docs"""
+        """ Dictionary setup """
         my_dict = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
         return my_dict
