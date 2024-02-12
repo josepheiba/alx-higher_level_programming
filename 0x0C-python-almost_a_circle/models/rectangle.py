@@ -9,6 +9,7 @@ class Rectangle(Base):
     """docs"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """docs"""
         self.__width = width
         self.__height = height
         self.x = x
@@ -52,6 +53,7 @@ class Rectangle(Base):
         self.__y = value
 
     def validator(self, name, value):
+        """docs"""
         if not isinstance(value, int):
             raise TypeError(f"{name} must be and integer")
         if name == 'width' or name == 'height':
