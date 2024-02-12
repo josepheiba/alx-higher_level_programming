@@ -54,9 +54,9 @@ class Rectangle(Base):
     def validator(self, name, value):
         if not isinstance(value, int):
             raise TypeError(f"{name} must be and integer")
-        if name is 'width' or name is 'height':
+        if name == 'width' or name == 'height':
             if value <= 0:
                 raise ValueError(f"{name} must be > 0")
-        if name is 'x' or name is 'y':
+        if name == 'x' or name == 'y':
             if value < 0:
-                raise ValueError("f{name} must be >= 0")
+                raise ValueError(f"{name} must be >= 0")
