@@ -62,3 +62,7 @@ class Rectangle(Base):
         if name == 'x' or name == 'y':
             if value < 0:
                 raise ValueError(f"{name} must be >= 0")
+
+    def area(self):
+        """docs"""
+        return self.width * self.height
