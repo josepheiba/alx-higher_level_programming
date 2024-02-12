@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""docs"""
+""" This odule contains class Base """
 import json
 
 
 class Base:
-    """docs"""
+    """ Class Base """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """docs"""
+        """ Initializes method """
         if id is not None:
             self.id = id
         else:
@@ -17,14 +17,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """docs"""
+        """ convert python object to JSON string """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries or [])
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """docs"""
+        """ Save object in a file """
         filename = "{}.json".format(cls.__name__)
         list_dic = []
 
