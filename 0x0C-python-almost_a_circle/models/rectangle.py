@@ -6,10 +6,10 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """docs"""
+    """ Class Rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """docs"""
+        """ Init """
         self.width = width
         self.height = height
         self.x = x
@@ -53,7 +53,7 @@ class Rectangle(Base):
         self.__y = value
 
     def validator(self, name, value):
-        """docs"""
+        """ Validator method """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be and integer")
         if name == 'width' or name == 'height':
@@ -64,11 +64,11 @@ class Rectangle(Base):
                 raise ValueError(f"{name} must be >= 0")
 
     def area(self):
-        """docs"""
+        """ Area method """
         return self.width * self.height
 
     def display(self):
-        """docs"""
+        """ Display method """
         for _ in range(0, self.__y):
             print()
         for _ in range(0, self.__height):
@@ -84,7 +84,7 @@ class Rectangle(Base):
         return s
 
     def update(self, *args, **kwargs):
-        """docs"""
+        """ Update method """
         if args is not None and len(args) != 0:
             list_atr = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
@@ -94,7 +94,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """docs"""
+        """ Dictionary method """
         my_dict = {'id': self.id, 'width': self.__width,
                    'height': self.__height, 'x': self.__x, 'y': self.__y}
         return my_dict
