@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""docs"""
-
-
+""" This module contains class Rectangle """
 from models.base import Base
 
 
