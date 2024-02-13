@@ -88,26 +88,12 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ Save To File csv """
-        filename = "{}.csv".format(cls.__name__)
-
-        if cls.__name__ == "Rectangle":
-            data_template = [0, 0, 0, 0, 0]
-            key_names = ['id', 'width', 'height', 'x', 'y']
-        else:
-            data_template = ['0', '0', '0', '0']
-            key_names = ['id', 'size', 'x', 'y']
-
-        data_matrix = []
-
-        if not list_objs:
-            pass
-        else:
-            for obj in list_objs:
-                for index in range(len(key_names)):
-                    data_template[index] = obj.to_dictionary()[key_names[index]]
-                data_matrix.append(data_template[:])
-
-        with open(filename, 'w') as writeFile:
-            writer = csv.writer(writeFile)
-            writer.writerows(data_matrix)
+        try:
+            data_list = [x.to_dictionary() for x in list_objs]
+        except:
+            data_list = '[]'
+        keys = data_list[0].keys()
+        with open(cls.__name__ + '.csv', 'w') as file:
+            writer = csv.DictWriter(file, keys)
+            writer.writeheader()
+            writer.writerows(data_list)
