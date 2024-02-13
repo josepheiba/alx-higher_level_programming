@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This odule contains class Base """
 import json
+import os.path
 
 
 class Base:
@@ -46,3 +47,13 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """makes instance"""
+        if cls.__name__ is 'Square':
+            newcreate = cls(1)
+        if cls.__name__ is 'Rectangle':
+            newcreate = cls(1, 1)
+        if newcreate:
+            newcreate.update(**dictionary)
+            return newcreate
