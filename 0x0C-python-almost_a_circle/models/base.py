@@ -3,6 +3,7 @@
 import json
 import os.path
 import csv
+import turtle
 
 
 class Base:
@@ -98,3 +99,40 @@ class Base:
             writer = csv.DictWriter(file, keys)
             writer.writeheader()
             writer.writerows(data_list)
+
+    @staticmethod
+def draw(list_of_rectangles, list_of_squares):
+    """ Draw Rectangles and Squares using turtle """
+    turt = turtle.Turtle()
+    turt.screen.bgcolor("#b7312c")
+    turt.pensize(3)
+    turt.shape("turtle")
+
+    turt.color("#ffffff")
+    for rect in list_of_rectangles:
+        turt.showturtle()
+        turt.up()
+        turt.goto(rect.x, rect.y)
+        turt.down()
+        for _ in range(2):
+            turt.forward(rect.width)
+            turt.left(90)
+            turt.forward(rect.height)
+            turt.left(90)
+        turt.hideturtle()
+
+    turt.color("#b5e3d8")
+    for sq in list_of_squares:
+        turt.showturtle()
+        turt.up()
+        turt.goto(sq.x, sq.y)
+        turt.down()
+        for _ in range(2):
+            turt.forward(sq.width)
+            turt.left(90)
+            turt.forward(sq.height)
+            turt.left(90)
+        turt.hideturtle()
+
+    turtle.exitonclick()
+
