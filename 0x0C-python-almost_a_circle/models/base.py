@@ -88,6 +88,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ Save From File csv """
         try:
             data_list = [x.to_dictionary() for x in list_objs]
         except:
