@@ -1,27 +1,15 @@
 #!/usr/bin/python3
-""" 2-main """
+""" 16-main """
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
 
-    try:
-        Rectangle(10, "2")
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        r = Rectangle(10, 2)
-        r.width = -10
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        r = Rectangle(10, 2)
-        r.x = {}
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        Rectangle(10, 2, 3, -1)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+    list_input = [
+        {'id': 89, 'width': 10, 'height': 4}, 
+        {'id': 7, 'width': 1, 'height': 7}
+    ]
+    json_list_input = Rectangle.to_json_string(list_input)
+    list_output = Rectangle.from_json_string(json_list_input)
+    print("[{}] {}".format(type(list_input), list_input))
+    print("[{}] {}".format(type(json_list_input), json_list_input))
+    print("[{}] {}".format(type(list_output), list_output))
