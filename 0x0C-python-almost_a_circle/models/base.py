@@ -2,6 +2,7 @@
 """ This odule contains class Base """
 import json
 import os.path
+import csv
 
 
 class Base:
@@ -67,3 +68,46 @@ class Base:
             with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
                 list_dicts = cls.from_json_string(f.read())
             return [cls.create(**dic) for dic in list_dicts]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Load From File csv """
+        if not os.path.isfile(cls.__name__ + '.csv'):
+            return []
+        else:
+            with open(cls.__name__ + '.csv', 'r') as file:
+                reader = csv.DictReader(file)
+                csv_data = [row for row in reader]
+                for row in csv_data:
+                    for key, val in row.items():
+                        try:
+                            row[key] = int(val)
+                        except ValueError:
+                            pass
+            return [cls.create(**dic) for dic in csv_data]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Save To File csv """
+        filename = "{}.csv".format(cls.__name__)
+
+        if cls.__name__ == "Rectangle":
+            data_template = [0, 0, 0, 0, 0]
+            key_names = ['id', 'width', 'height', 'x', 'y']
+        else:
+            data_template = ['0', '0', '0', '0']
+            key_names = ['id', 'size', 'x', 'y']
+
+        data_matrix = []
+
+        if not list_objs:
+            pass
+        else:
+            for obj in list_objs:
+                for index in range(len(key_names)):
+                    data_template[index] = obj.to_dictionary()[key_names[index]]
+                data_matrix.append(data_template[:])
+
+        with open(filename, 'w') as writeFile:
+            writer = csv.writer(writeFile)
+            writer.writerows(data_matrix)
