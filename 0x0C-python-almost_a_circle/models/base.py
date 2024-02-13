@@ -100,7 +100,6 @@ class Base:
             writer.writeheader()
             writer.writerows(data_list)
 
-    
     @staticmethod
     def draw(list_of_rectangles, list_of_squares):
         """ Draw Rectangles and Squares using turtle """
@@ -108,7 +107,6 @@ class Base:
         turt.screen.bgcolor("#b7312c")
         turt.pensize(3)
         turt.shape("turtle")
-
         turt.color("#FFC0CB")
         for rect in list_of_rectangles:
             turt.showturtle()
@@ -121,7 +119,6 @@ class Base:
                 turt.forward(rect.height)
                 turt.left(90)
             turt.hideturtle()
-
         turt.color("#00FF99")
         for sq in list_of_squares:
             turt.showturtle()
@@ -134,5 +131,4 @@ class Base:
                 turt.forward(sq.height)
                 turt.left(90)
             turt.hideturtle()
-
         turtle.exitonclick()
