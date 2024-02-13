@@ -91,7 +91,7 @@ class Base:
         """ Save From File csv """
         try:
             data_list = [x.to_dictionary() for x in list_objs]
-        except:
+        except TypeError:
             data_list = '[]'
         keys = data_list[0].keys()
         with open(cls.__name__ + '.csv', 'w') as file:
