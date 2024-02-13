@@ -57,3 +57,13 @@ class Base:
         if newcreate:
             newcreate.update(**dictionary)
             return newcreate
+
+    @classmethod
+    def load_from_file(cls):
+        """ Load From File cls """
+        if not os.path.isfile(cls.__name__ + '.json'):
+            return []
+        else:
+            with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
+                list_dicts = cls.from_json_string(f.read())
+            return [cls.create(**dic) for dic in list_dicts]
