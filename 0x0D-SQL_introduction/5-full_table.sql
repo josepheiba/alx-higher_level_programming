@@ -1,2 +1,2 @@
 -- show
-SHOW CREATE TABLE first;
+SHOW CREATE TABLE hbtn_0c_0.first;
