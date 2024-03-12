@@ -1,2 +1,2 @@
 -- show
-SHOW DATABASES;
+$SHOW DATABASES;
