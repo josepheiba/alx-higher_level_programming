@@ -1,6 +1,9 @@
-## 0x0E. SQL - More queries
+# 0x0E. SQL - More queries
 
-**Date:** Mar 13, 2024
+## 100daysofALXSE
+#100daysofALXSE
+#ALX_SE
+#DoHardThings
 
 ---
 
@@ -27,10 +30,3 @@ This project focuses on enhancing our understanding of SQL queries, MySQL databa
 - SQL keywords are written in uppercase as per conventions
 - Ensure all files have appropriate file permissions
 - All tasks completed within the specified time frame
-
----
-
-### Hashtags
-#ALX_SE
-#100daysofALXSE
-#DoHardThings
